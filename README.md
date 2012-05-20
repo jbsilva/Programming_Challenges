@@ -8,3 +8,4 @@ seguintes sites:
 
 *   [UVa Online Judge](http://uva.onlinejudge.org/)
 *   [Maratona de Programação](http://maratona.ime.usp.br/)
+*   [Sphere Online Judge BR](http://br.spoj.pl/)
