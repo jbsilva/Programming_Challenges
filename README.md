@@ -9,3 +9,6 @@ seguintes sites:
 *   [UVa Online Judge](http://uva.onlinejudge.org/)
 *   [Maratona de Programação](http://maratona.ime.usp.br/)
 *   [Sphere Online Judge BR](http://br.spoj.pl/)
+*   [Project Euler](https://projecteuler.net)
+
+Meu username em todos é `jbsilva`.
