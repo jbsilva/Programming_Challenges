@@ -3,7 +3,13 @@
 //       Filename:  10189-minesweeper.cpp
 // 
 //    Description:  10189
-//                  O único erro da versão 1.0 era emitir um "endl" extra logo no início
+//                  O único erro da versão 1.0 era emitir um "endl" extra logo
+//                  no início.
+//                  Essa é uma solução "engenheiro de software", usando
+//                  alocação dinâmica e outras coisas desnecessárias. Para uma
+//                  competição real apenas aloque uma matriz 102x102 e não se
+//                  preocupe com o uso extra de memória nem com os limites do
+//                  campo.
 // 
 //        Version:  2.0
 //        Created:  03/17/2011 11:29:39 PM
@@ -14,7 +20,6 @@
 //        Company:  UFSCar
 // 
 // ============================================================================
-
 #include <cstdlib>
 #include <iostream>
 #include <new>
@@ -32,11 +37,11 @@ int main()
     char **campo;
 
 
-    // ============================================================================
-    //                          Armazena campos em uma matriz 
-    // ============================================================================
+    // ========================================================================
+    //                      Armazena campos em uma matriz 
+    // ========================================================================
     
-    cin >> n >> m;                                  // Lê a 1a linha e pega o tamanho do campo
+    cin >> n >> m;                   // Lê a 1a linha e pega o tamanho do campo
     
     while (n != 0)
     {
@@ -44,7 +49,7 @@ int main()
 
         campo = new char*[n];
         for ( i=0; i<n; i++)
-            campo[i] = new char[m];                 // Aloca a matriz do campo
+            campo[i] = new char[m];                  // Aloca a matriz do campo
 
         for ( i=0; i<n; i++)
         {
@@ -52,9 +57,9 @@ int main()
                 cin >> campo[i][j];
         }
 
-        // ============================================================================
-        //                          Verifica os quadrados adjacentes
-        // ============================================================================
+        // ====================================================================
+        //                  Verifica os quadrados adjacentes
+        // ====================================================================
 
         cout << "Field #" << num_do_campo << ":" << endl;
 
@@ -107,13 +112,12 @@ int main()
                 cout << endl;
             }
 
-        cin >> n >> m;                              // Lê as dimensões do próximo campo
+        cin >> n >> m;                      // Lê as dimensões do próximo campo
 
         if (n != 0)
             cout << endl;
 
         delete[] campo;
-
     }
 
     return 0;
