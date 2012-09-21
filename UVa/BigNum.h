@@ -1,4 +1,4 @@
-// =====================================================================================
+// ===================================================================
 // 
 //       Filename:  BigNum.h
 // 
@@ -13,8 +13,7 @@
 //         Author:  Julio Batista Silva (351202), julio.forus@gmail.com
 //        Company:  UFSCar
 // 
-// =====================================================================================
-
+// ===================================================================
 #include <iostream>
 #include <cstdlib>
 #include <cstring>
@@ -32,10 +31,10 @@ const USI MAX_DIGITOS  = 600;
 const bool MAIS        = 0;
 const bool MENOS       = 1;
 
-// =====================================================================================
+// ===================================================================
 //        Class:  BigNum
 //  Description:  Armazena números com precisão arbritária
-// =====================================================================================
+// ===================================================================
 
 #ifndef BIGNUM_H
 #define BIGNUM_H
@@ -45,7 +44,7 @@ class BigNum
     private:
             char Digitos[MAX_DIGITOS];
             bool Sinal;
-            SI UD;                   // Ultimo Dígito: Posição do dígito de maior ordem.
+            SI UD;          // Ultimo Dígito: Posição do dígito de maior ordem.
 
     public:
             BigNum();

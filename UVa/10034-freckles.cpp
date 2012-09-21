@@ -1,14 +1,15 @@
-// =====================================================================================
+// ===================================================================
 // 
 //       Filename:  10034-freckles.cpp
 // 
 //    Description:  UVA 10034
-//                  Devemos achar o peso da menor spanning tree.
-//                  Aqui usarei uma variação do algoritmo de prim  por ser bem simples
+//                  Devemos achar o peso da menor spanning tree.  Aqui usarei
+//                  uma variação do algoritmo de prim  por ser bem simples
 //                  Existem soluções mais eficientes.
 //
-//                  Podemos usar programação dinâmina para aumentar a eficiência do algoritmo
-//                  mantendo um vetor com as distâncias entre cada vértice pré calculada.
+//                  Podemos usar programação dinâmina para aumentar a
+//                  eficiência do algoritmo mantendo um vetor com as distâncias
+//                  entre cada vértice pré calculada.
 //
 //        Version:  1.0
 //        Created:  05/22/2011 08:48:23 PM
@@ -18,8 +19,7 @@
 //         Author:  Julio Batista Silva (351202), juliob91(at)gmail.com
 //        Company:  UFSCar
 // 
-// =====================================================================================
-
+// ===================================================================
 #include <iostream>
 #include <iomanip>
 #include <cmath>
@@ -51,13 +51,13 @@ float distancia(Vertice a, Vertice b)
 int main()
 {
     USI cases, qtd_vertices;
-    Vertice freckle;                        // Contém as coordenadas de uma sarda
-    list<Vertice> Q_disp;                   // Fila de vértices ainda não usados na árvore
-    list<Vertice> Q_mst;                    // Fila de vértices já percorridos pela na árvore
-    list<Vertice>::iterator it_disp;        // Iterador para fila de vértices disponíveis
-    list<Vertice>::iterator it_mst;         // Iterador para fila de vértices não disponíveis
-    list<Vertice>::iterator it_min;         // Marca a posição do vetor com menor distância
-    float custo;                            // Comprimento total da MST
+    Vertice freckle;                 // Contém as coordenadas de uma sarda
+    list<Vertice> Q_disp;            // Fila de vértices ainda não usados na árvore
+    list<Vertice> Q_mst;             // Fila de vértices já percorridos pela na árvore
+    list<Vertice>::iterator it_disp; // Iterador para fila de vértices disponíveis
+    list<Vertice>::iterator it_mst;  // Iterador para fila de vértices não disponíveis
+    list<Vertice>::iterator it_min;  // Marca a posição do vetor com menor distância
+    float custo;                     // Comprimento total da MST
     float dist;
     float min_dist;                   
     
