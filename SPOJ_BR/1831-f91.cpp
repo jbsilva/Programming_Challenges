@@ -1,8 +1,10 @@
 // ============================================================================
 // 
 //       Filename:  1831-f91.cpp
+//                  10696-f91.cpp
 // 
-//    Description:  br.spoj.pl/problems/F91/
+//    Description:  SPOJ-BR: br.spoj.pl/problems/F91/
+//                  UVa: 10696
 // 
 //        Version:  1.0
 //        Created:  09/13/2012 06:01:59 PM
