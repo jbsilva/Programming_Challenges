@@ -1,0 +1,1 @@
+../SPOJ_BR/3244-divisao_da_nlogonia.cpp
