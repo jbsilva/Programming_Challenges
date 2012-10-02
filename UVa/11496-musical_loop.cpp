@@ -1,10 +1,12 @@
 // ============================================================================
 // 
-//       Filename:  11496-musical_loop.cpp
-//                  3242-loop_musical.cpp
+//       Filename:  11496-musical_loop.cpp (UVa)
+//                  3242-loop_musical.cpp  (SPOJ BR)
+//                  01089-loop_musical.cpp (URI)
 // 
 //    Description:  UVa 11496 - Musical Loop
 //                  SPOJ BR 3242 - Loop Musical
+//                  URI 1089 - Loop Musical
 //                  br.spoj.pl/problems/LOOPMUSI/
 //
 //                  Primeira fase da Maratona de Programação 2008
