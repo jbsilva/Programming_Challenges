@@ -1,9 +1,11 @@
 // ===================================================================
 // 
-//       Filename:  10071-back_to_high_school_physics.cpp
+//       Filename:  10071-back_to_high_school_physics.cpp (UVa)
+//                  01197-back_to_high_school_physics.cpp (URI)
 // 
-//    Description:  10071 - Back to High School Physics
-//                  
+//    Description:  UVa 10071 - Back to High School Physics
+//                  URI 1197 - Back to High School Physics
+//
 //                  a = vp/tp = d^2s/dt^2 => s = (vp*t^2)/(2*tp);
 //                  t = 2*tp => s = 2*vp*tp
 //
@@ -16,14 +18,13 @@
 //        Company:  UFSCar
 // 
 // ===================================================================
-#include <iostream>
-using namespace std;
+#include <cstdio>
 
 int main()
 {
     int vp, tp;
-    while (cin >> vp >> tp)
-        cout << 2*vp*tp << endl;
+    while (scanf("%d %d", &vp, &tp) != EOF)
+        printf("%d\n", 2*vp*tp);
 
     return 0;
 }
