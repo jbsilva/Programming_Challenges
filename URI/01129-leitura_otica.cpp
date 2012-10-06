@@ -1,0 +1,1 @@
+../SPOJ_BR/8305-leitura_otica.cpp
