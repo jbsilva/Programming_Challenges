@@ -3,23 +3,27 @@
 //       Filename:  10127-ones.cpp
 // 
 //    Description:  UVA 10127
-//                  De início o problema parece complicado, mas após uma análise do
-//                  funcionamento da divisão ele se torna bem simples.
+//                  De início o problema parece complicado, mas após uma
+//                  análise do funcionamento da divisão ele se torna bem
+//                  simples.
 //
-//                  -> Armamos o método da chave colocando vários 1s no dividendo e n
-//                  no divisor. Ex.: 11111 / 3
+//                  -> Armamos o método da chave colocando vários 1s no
+//                      dividendo e n no divisor. Ex.: 11111 / 3
 //
 //                  11111 |_3_
 //
-//                  -> Tentamos pegar o primeiro 1 e dividir por 3. Da 0 e resto 1.
+//                  -> Tentamos pegar o primeiro 1 e dividir por 3. Da 0 e
+//                      resto 1.
 //                  11111 |_3_
 //                  1   0
 //
-//                  -> "Abaixamos" o próximo 1 à direita do resto, que é equivalente a 1+resto*10
+//                  -> "Abaixamos" o próximo 1 à direita do resto, que é
+//                      equivalente a 1+resto*10
 //                  11111 |_3_
 //                  11  0
 //
-//                  -> Tentamos dividir 11 por 3. Da 3 resto 2, abaixamos o outro 1 ao lado do resto
+//                  -> Tentamos dividir 11 por 3. Da 3 resto 2, abaixamos o
+//                      outro 1 ao lado do resto
 //                  11111 |_3_
 //                  11  03
 //                   2
@@ -30,29 +34,28 @@
 //                   21
 //                    0
 //                  
-//                  -> O resto deu 0, então 111 é o primeiro múltiplo de 3 na forma 11...1
-//                     Não abaixamos os próximos 1s, pois só queremos o menor múltiplo nessa forma
+//                  -> O resto deu 0, então 111 é o primeiro múltiplo de 3 na
+//                      forma 11...1
+//                      Não abaixamos os próximos 1s, pois só queremos o menor
+//                      múltiplo nessa forma
 //
-//        Version:  1.0
+//        Version:  1.1
 //        Created:  04/11/2011 12:35:15 AM
-//       Revision:  none
+//       Revision:  10/06/2012 18:45:00 PM
+//                      Reformatei a explicação e troquei iostream por cstdio
 //       Compiler:  g++
 // 
 //         Author:  Julio Batista Silva (351202), juliob91(at)gmail.com
 //        Company:  UFSCar
 // 
 // ============================================================================
-
-#include <iostream>
-using namespace std;
-
-typedef unsigned short int USI;
+#include <cstdio>
 
 int main()
 {
-    USI n, i, count;
+    int n, i, count;
 
-    while (cin >> n)
+    while (scanf("%d", &n) != EOF)
     {
         i = count = 0;
 
@@ -63,7 +66,7 @@ int main()
         }
         while (i);
 
-        cout << count << endl;
+        printf("%d\n", count);
     }
 
     return 0;
