@@ -1,8 +1,10 @@
 // ============================================================================
 // 
-//       Filename:  10035_primary_arithmetic.cpp
+//       Filename:  10035_primary_arithmetic.cpp (UVa)
+//                  01212_primary_arithmetic.cpp (URI)
 // 
 //    Description:  UVa 10035 - Primary Arithmetic
+//                  URI 1212 - Primary Arithmetic
 // 
 //        Version:  1.0
 //        Created:  10/02/2012 12:57:03 AM

@@ -1,0 +1,1 @@
+../UVa/10035_primary_arithmetic.cpp
