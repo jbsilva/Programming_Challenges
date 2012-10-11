@@ -1,18 +1,27 @@
 // ============================================================================
 // 
-//       Filename:  10137-the_trip.cpp
+//       Filename:  10137-the_trip.cpp (UVa)
+//                  01220-the_trip.cpp (URI)
 // 
-//    Description:  UVA 10137
+//    Description:  UVA 10137 - The Trip
+//                  URI 1220 - The Trip
+//
+//                  A dificuldade deste problema está em lembrar que não se
+//                  pode lidar com frações de centavos.
 // 
-//        Version:  2.0
+//        Version:  2.5
 //        Created:  03/18/2011 03:35:39 AM
 //       Revision:  
 //                  Versão 1.0:
-//                              18/03/2011 -> Wrong Answer
-//
+//                      18/03/2011 -> Wrong Answer
 //                  Versão 2.0:
-//                              14/04/2011 -> Accepted
-//                              Apenas mantive o modo de criar e armazenar o vetor "gastos"
+//                      14/04/2011 -> Accepted
+//                          Apenas mantive o modo de criar e armazenar o vetor
+//                          "gastos"
+//                  Versão 2.5:
+//                      11/10/2012 -> Accepted
+//                          Troquei iostream por cstdio, removi alocação
+//                          dinâmica, troquei double por int
 //
 //       Compiler:  g++
 // 
@@ -20,47 +29,33 @@
 //        Company:  UFSCar
 // 
 // ============================================================================
-
-#include <iostream>
-#include <iomanip>
-using namespace std;
-
-typedef unsigned short int USI;
+#include <cstdio>
 
 int main()
 {
-    USI n, i;
-    double* gastos;
-    double media, rec, pag;
+    int n, i, dolar, cents, gastos[1001], soma, rec, pag;
+    double media;
 
-    while ( cin >> n && n != 0)
+    while (scanf("%d", &n) && n)
     {
-        gastos = new double[n];
-
-        media = rec = pag = 0.0;
-
-        for (i=0; i<n; i++)
+        soma = 0;
+        for (i=0; i < n; i++)
         {
-            cin >> gastos[i];
-            
-            gastos[i] *= 100.0;                     // Passa para centavos
-
-            media += gastos[i]/(double)n;          // Calcula o gasto médio
+            scanf("%d.%d", &dolar, &cents);
+            gastos[i] = 100*dolar + cents;               // Passa para centavos
+            soma += gastos[i];
         }
 
-        for (i=0; i<n; i++)
-        {
-            // Estudantes que gastaram mais. Valor que deve ser pago
-            if(gastos[i] > media)
-                pag += (int)(gastos[i] - media);
+        media = (double)soma/n;                                  // Gasto médio
+
+        rec = pag = 0;
+        for (i=0; i < n; i++)
+            if (gastos[i] > media)                          // Valor a ser pago
+                pag += gastos[i] - media;
             else
-            // Estudantes que gastaram menos. Valor que deve ser recebido
-                rec += (int)(media - gastos[i]);
-        }
+                rec += media - gastos[i];               // Valor a ser recebido
 
-        cout << "$" << fixed << setprecision(2) << (pag>rec ? pag : rec) / 100 << endl;
-
-        delete[] gastos;
+        printf("$%.2lf\n", (pag > rec ? pag : rec) / 100.0);
     }
 
     return 0;
