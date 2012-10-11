@@ -1,0 +1,1 @@
+../SPOJ_BR/11610-guarda_costeira.cpp
