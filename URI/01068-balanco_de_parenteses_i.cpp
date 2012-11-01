@@ -14,31 +14,29 @@
 // 
 // ============================================================================
 #include <cstdio>
+#include <cstring>
 
 int main()
 {
-    int abre=0;
-    char c, lixo[1001];
-    while ((c=getchar()) != EOF)
+    int tam, abre, i;
+    char exp[1001];
+
+    while (gets(exp) != NULL)
     {
-        if (c == '(')
-            abre++;
-        else if (c == ')')
-        {
-            abre--;
-            if (abre < 0) // fechando parentese que nao foi aberto
+        tam = strlen(exp);
+
+        abre = 0;
+        for (i = 0; i < tam; i++)
+            if (exp[i] == '(')
+                abre++;
+            else if (exp[i] == ')')
             {
-                //while ((c=getchar()) != '\n');
-                gets(lixo);
-                puts("incorrect");
-                abre = 0;
+                abre--;
+                if (abre < 0)
+                    break;
             }
-        }
-        else if (c == '\n')
-        {
-            puts(abre == 0 ? "correct" : "incorrect");
-            abre = 0;
-        }
+
+        puts(abre ? "incorrect" : "correct");
     }
 
     return 0;
