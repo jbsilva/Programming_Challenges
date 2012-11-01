@@ -18,23 +18,26 @@
 
 int main()
 {
-    int tam, abre, i;
-    char exp[1001];
+    int abre;
+    char exp[1001], *ptr;
 
     while (gets(exp) != NULL)
     {
-        tam = strlen(exp);
-
         abre = 0;
-        for (i = 0; i < tam; i++)
-            if (exp[i] == '(')
+        ptr = exp;
+        while (*ptr != '\0')
+        {
+            if (*ptr == '(')
                 abre++;
-            else if (exp[i] == ')')
+            else if (*ptr == ')')
             {
                 abre--;
                 if (abre < 0)
                     break;
             }
+
+            ptr++;
+        }
 
         puts(abre ? "incorrect" : "correct");
     }
