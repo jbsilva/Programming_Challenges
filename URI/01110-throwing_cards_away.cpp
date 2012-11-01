@@ -1,0 +1,1 @@
+../UVa/10935-throwing_cards_away_i.cpp
