@@ -1,0 +1,1 @@
+../UVa/10082-wertyu.cpp
