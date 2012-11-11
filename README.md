@@ -13,5 +13,6 @@ seguintes sites:
 *   [Sphere Online Judge BR](http://br.spoj.pl/)
 *   [URI Online Judge](http://urionlinejudge.com.br/)
 *   [Project Euler](https://projecteuler.net)
+*   [Rosalind](http://rosalind.info)
 
 Meu username no URI é Julio e nos outros é `jbsilva`.
