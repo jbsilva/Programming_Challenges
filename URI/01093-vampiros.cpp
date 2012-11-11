@@ -1,0 +1,1 @@
+../SPOJ_BR/3246-vampiros.cpp
