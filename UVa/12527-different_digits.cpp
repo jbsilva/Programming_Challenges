@@ -1,8 +1,10 @@
 // ============================================================================
 // 
-//       Filename:  12527-different_digits.cpp
+//       Filename:  12527-different_digits.cpp (UVa)
+//                  01285-digitos_diferentes.cpp (URI)
 // 
 //    Description:  UVa 12527 - Different Digits
+//                  URI 1285 - Dígitos diferentes
 //                  
 //                  Final Brasileira da Maratona de Programação 2012
 // 
