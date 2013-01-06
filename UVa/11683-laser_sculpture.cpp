@@ -1,0 +1,1 @@
+../SPOJ_BR/5484-escultura_a_laser.cpp

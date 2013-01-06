@@ -24,34 +24,32 @@
 
 int main()
 {
-    int alt, comp;
-    int af[10001];
+    int alt, comp, vezes, inicial, anterior, atual;
     while (scanf("%d %d", &alt, &comp) && (alt || comp))
     {
-        //int af[comp+1]; // altura final
+        vezes = 0;
+        inicial = anterior = alt;
+        bool subindo = false;
         for (int i = 0; i < comp; i++)
-            scanf("%d", &af[i]);
-        af[comp] = alt; // Cria último bloco imaginário
-
-        int vezes = 0;
-        for (int i = alt; i > 0; i--)
         {
-            // Bloco da esquerda > altura i atual? Cria 1o bloco imaginário.
-            bool anterior = true;
-            for (int j = 0; j <= comp; j++)
+            scanf("%d", &atual);
+            if (atual < anterior)
             {
-                if (af[j] >= i)
-                {
-                    if (!anterior)
-                    {
-                        vezes++;
-                        anterior = true;
-                    }
-                }
-                else
-                    anterior = false;
+                subindo = false;
             }
+            else if (atual > anterior)
+            {
+                if (!subindo)
+                    vezes += inicial - anterior;
+                inicial = atual;
+                subindo = true;
+            }
+
+            anterior = atual;
         }
+
+        if (!subindo)
+            vezes += inicial - anterior;
 
         printf("%d\n", vezes);
     }
