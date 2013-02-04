@@ -1,0 +1,1 @@
+../SPOJ/7745-bingo.cpp
