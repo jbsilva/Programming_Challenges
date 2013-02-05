@@ -21,6 +21,8 @@
 #include <cstdio>
 #include <cstring>
 
+#define DESALOCA 0 // Subi um pouco no ranking sem desalocar a memória
+
 char inord[27], preord[27];
 int posicao[26];
 struct node
@@ -34,14 +36,11 @@ struct node
 
 void insert(char c, node* n)
 {
-    if (n == NULL) return;
-
     if (posicao[(int)c - 'A'] < posicao[(int)n->c - 'A'])
     {
         if (n->esq == NULL)
         {
-            node *novo;
-            novo = new node(c);
+            node *novo = new node(c);
             n->esq = novo;
         }
         else
@@ -51,8 +50,7 @@ void insert(char c, node* n)
     {
         if (n->dir == NULL)
         {
-            node *novo;
-            novo = new node(c);
+            node *novo = new node(c);
             n->dir = novo;
         }
         else
@@ -67,9 +65,10 @@ void postorder(node* no)
 
     postorder(no->esq);
     postorder(no->dir);
-    printf("%c", no->c);
+    putchar(no->c);
 }
 
+#if DESALOCA
 // Economiza memória
 void desaloca(node* no)
 {
@@ -83,6 +82,7 @@ void desaloca(node* no)
         desaloca(dir);
     }
 }
+#endif
 
 int main()
 {
@@ -93,8 +93,7 @@ int main()
         for (int i = 0; i < tam; i++)
             posicao[(int)inord[i] - 'A'] = i;
 
-        node *raiz;
-        raiz = new node(preord[0]);
+        node *raiz = new node(preord[0]);
 
         for (int i = 1; i < tam; i++)
             insert(preord[i], raiz);
@@ -103,8 +102,10 @@ int main()
         postorder(raiz);
         putchar('\n');
 
+#if DESALOCA
         // Desnecessário para a maratona, mas evita memory leak
         desaloca(raiz);
+#endif
     }
 
     return 0;
