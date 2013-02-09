@@ -1,8 +1,10 @@
 // ============================================================================
 // 
-//       Filename:  12531-hours_and_minutes.cpp
+//       Filename:  12531-hours_and_minutes.cpp (UVa)
+//                  01300-hours_and_minutes.cpp (URI)
 // 
 //    Description:  UVa 12531 - Hours and Minutes
+//                  URI 1300 - Hours and Minutes
 //
 //                  Final Brasileira da Maratona de Programação 2012
 //
@@ -31,3 +33,4 @@ int main()
 
     return 0;
 }
+
