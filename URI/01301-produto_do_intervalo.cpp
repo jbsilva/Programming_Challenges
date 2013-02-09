@@ -4,7 +4,7 @@
 // 
 //    Description:  URI 1301 - Produto do Intervalo
 // 
-//        Version:  1.0 - TLE
+//        Version:  2.0 - TLE / Runtime Error
 //        Created:  09/Feb/2013 01:34:43
 //       Revision:  none
 //       Compiler:  g++
@@ -33,14 +33,21 @@ int main()
                 seq[n1] = n2;
             else
             {
-                int produto = 1;
-                for (int j = n1; j <= n2 && produto; j++)
-                    produto *= (seq[j] > 0) - (seq[j] < 0);
+                int negativos = 0;
+                bool zero = false;
+                for (int j = n1; j <= n2 && !zero; j++)
+                {
+                    if (!seq[j])
+                        zero = true;
+                    else
+                        //negativos += seq[j] >> (sizeof(int) * 8 - 1);
+                        negativos += seq[j] >> 31;
+                }
 
-                if (produto)
-                    putchar(produto < 0 ? '-' : '+');
-                else
+                if (zero)
                     putchar('0');
+                else
+                    putchar(negativos%2 ? '-' : '+');
             }
         }
         putchar('\n');
