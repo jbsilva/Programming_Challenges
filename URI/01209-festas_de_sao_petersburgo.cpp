@@ -4,7 +4,7 @@
 // 
 //    Description:  URI 1209 - Festas de São Petersburgo
 // 
-//        Version:  2.0 - Runtime Error
+//        Version:  2.1
 //        Created:  14/Feb/2013 19:26:40
 //       Revision:  none
 //       Compiler:  g++
@@ -30,7 +30,7 @@ inline void remover(int i)
             g[i][j] = g[j][i] = 0;
             amigos[j]--;
 
-            if (amigos[j] && amigos[j] < min_amigos)
+            if (amigos[j] > 0 && amigos[j] < min_amigos)
                 remover(j);
         }
 }
@@ -63,13 +63,13 @@ int main()
             }
 
             for (int i = 1; i <= pessoas; i++)
-                if (amigos[i] && amigos[i] < min_amigos)
+                if (amigos[i] > 0 && amigos[i] < min_amigos)
                     remover(i);
 
             // Imprime todos os que sobraram
             bool imprimiu = false;
             for (int i = 1; i <= pessoas; i++)
-                if (amigos[i])
+                if (amigos[i] > 0)
                 {
                     if (!imprimiu)
                     {
