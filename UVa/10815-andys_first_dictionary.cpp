@@ -5,8 +5,12 @@
 // 
 //    Description:  UVa 10815 - Andy's first Dictionary
 //                  URI 1215 - Andy's first Dictionary
-// 
-//        Version:  2.0 -- Accepted, 0.036s
+//
+//                  Olhar o histórico de commits para a versão com quicksort.
+//                  Esta versão usando set foi mais rápida no UVa e usou menos
+//                  memória.
+//
+//        Version:  3.0 -- Accepted 0.020 (UVa)
 //        Created:  28/Feb/2013 21:01:17
 //       Revision:  none
 //       Compiler:  g++
@@ -16,21 +20,17 @@
 // 
 // ============================================================================
 #include <cstdio>
-#include <cstdlib>
 #include <cstring>
-
-
-// Aloca pouco menos de 32MB de memória
-char words[128000][202], lin[202], *ptrs[128000], *ptr;
-
-inline int comp_str_ptr(const void *a, const void *b)
-{
-    return strcmp(*(char* const*)a, *(char* const*)b);
-}
+#include <string>
+#include <set>
+using namespace std;
 
 
 int main()
 {
+    set<string> palavras;
+    set<string>::iterator it;
+    char palavra[202], lin[202], *ptr;
     int qtd = -1;
     while (gets(lin) != NULL)
     {
@@ -44,19 +44,19 @@ int main()
             {
                 if (!anterior_letra)
                 {
+                    anterior_letra = true;
                     qtd++;
                     i = 0;
-                    ptrs[qtd] = words[qtd];
-                    anterior_letra = true;
                 }
-                words[qtd][i++] = (*ptr < 'a') ? *ptr+32 : *ptr;
+                palavra[i++] = (*ptr < 'a') ? *ptr+32 : *ptr;
             }
             else
             {
                 if (anterior_letra)
                 {
-                    words[qtd][i] = '\0';
                     anterior_letra = false;
+                    palavra[i] = '\0';
+                    palavras.insert(string(palavra));
                 }
             }
 
@@ -64,15 +64,14 @@ int main()
         }
         // Para quando a linha terminar numa letra
         if (anterior_letra)
-            words[qtd][i] = '\0';
+        {
+            palavra[i] = '\0';
+            palavras.insert(string(palavra));
+        }
     }
 
-    qsort(ptrs, qtd+1, sizeof(char*), comp_str_ptr);
-
-    puts(ptrs[0]);
-    for (int i = 1; i <= qtd; i++)
-        if (strcmp((char const*)ptrs[i-1], (char const*)ptrs[i]))
-            puts(ptrs[i]);
+    for (it = palavras.begin(); it != palavras.end(); ++it)
+        puts(it->c_str());
 
     return 0;
 }
