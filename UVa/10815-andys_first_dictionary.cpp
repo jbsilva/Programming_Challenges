@@ -6,7 +6,7 @@
 //    Description:  UVa 10815 - Andy's first Dictionary
 //                  URI 1215 - Andy's first Dictionary
 // 
-//        Version:  1.0 - Runtime Error
+//        Version:  2.0 -- Accepted, 0.036s
 //        Created:  28/Feb/2013 21:01:17
 //       Revision:  none
 //       Compiler:  g++
@@ -20,6 +20,9 @@
 #include <cstring>
 
 
+// Aloca pouco menos de 32MB de memória
+char words[128000][202], lin[202], *ptrs[128000], *ptr;
+
 inline int comp_str_ptr(const void *a, const void *b)
 {
     return strcmp(*(char* const*)a, *(char* const*)b);
@@ -28,7 +31,6 @@ inline int comp_str_ptr(const void *a, const void *b)
 
 int main()
 {
-    char words[20001][202], lin[202], *ptrs[20001], *ptr;
     int qtd = -1;
     while (gets(lin) != NULL)
     {
@@ -45,20 +47,22 @@ int main()
                     qtd++;
                     i = 0;
                     ptrs[qtd] = words[qtd];
+                    anterior_letra = true;
                 }
                 words[qtd][i++] = (*ptr < 'a') ? *ptr+32 : *ptr;
-                anterior_letra = true;
             }
             else
             {
                 if (anterior_letra)
+                {
                     words[qtd][i] = '\0';
-                anterior_letra = false;
+                    anterior_letra = false;
+                }
             }
 
             ptr++;
         }
-        // Para quando a linha tiver exatamente 200 chars e terminar numa letra
+        // Para quando a linha terminar numa letra
         if (anterior_letra)
             words[qtd][i] = '\0';
     }
