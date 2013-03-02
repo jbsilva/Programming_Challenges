@@ -1,0 +1,1 @@
+../UVa/10295-hay_points.cpp
