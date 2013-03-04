@@ -16,7 +16,10 @@
 //                    01:16:00 2000000000
 //                    99:59:59               
 //
-//        Version:  1.0 -- ACC no UVa e POJ. WA no URI (investigando o motivo)
+//                    Após corrigirem os inputs no URI, a versão 1.0 foi aceita
+//                    A 1.5 usa só 1 sscanf e não refaz a conta dos segundos.
+//
+//        Version:  1.5
 //        Created:  03/Mar/2013 21:27:50
 //       Revision:  none
 //       Compiler:  g++
@@ -26,29 +29,23 @@
 // 
 // ============================================================================
 #include <cstdio>
-#include <cstring>
-
 
 int main()
 {
     char lin[200];
-    int h1, m1, s1, h2, m2, s2, diff, speed;
+    int h, m, s, v, v2=0, sec=0, sec2=0, leu;
     double total = 0.0;
-    h2 = m2 = s2 = speed = 0;
 
     while (gets(lin) != NULL)
     {
-        sscanf(lin, "%d:%d:%d", &h1, &m1, &s1);
-        diff = (h1*3600 + m1*60 + s1) - (h2*3600 + m2*60 + s2);
-        total += speed / 3600.0 * diff;
+        leu = sscanf(lin, "%d:%d:%d %d", &h, &m, &s, &v);
+        sec = h*3600 + m*60 + s;
+        total += v2 / 3600.0 * (sec - sec2);
+        sec2 = sec; v2 = v;
 
-        // Se o scanf retornar EOF, então os caracteres extras eram só espaços.
-        if (!(strlen(lin) > 8 && sscanf(lin+9, "%d", &speed) != EOF))
-            printf("%02d:%02d:%02d %.2f km\n", h1, m1, s1, total);
-
-        h2 = h1; m2 = m1; s2 = s1;
+        if (leu == 3)
+            printf("%02d:%02d:%02d %.2f km\n", h, m, s, total);
     }
 
     return 0;
 }
-
