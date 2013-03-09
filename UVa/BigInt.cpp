@@ -1,22 +1,22 @@
 // ===================================================================
-// 
+//
 //       Filename:  BigInt.cpp
-// 
+//
 //    Description:  Biblioteca para operar com números muito grandes.
 //                  É uma versão mais compacta e simplificada que o meu BigNum,
 //                  mais apropriada para utilizar em competições de
 //                  programação.
 //
 //                  Código adaptado de outro material.
-// 
+//
 //        Version:  1.0
 //        Created:  09/01/2012 12:04:00 AM
 //       Revision:  none
 //       Compiler:  g++
-// 
+//
 //         Author:  Julio B. Silva (351202), julio(at)juliobs.com
 //        Company:  UFSCar
-// 
+//
 // ===================================================================
 #include <sstream>
 #include <cstring>
@@ -43,16 +43,14 @@ struct bigint
         v[n++] = x; fix();
     }
 
-    bigint(char *s): n(1)                              // Construtor com string
+    bigint(char* s): n(1)                              // Construtor com string
     {
         memset(v, 0, sizeof(v));
-
         int sign = 1;
         while (*s && !isdigit(*s))
             if (*s++ == '-')
                 sign *= -1;
-
-        char *t = strdup(s), *p = t + strlen(t);
+        char* t = strdup(s), *p = t + strlen(t);
         while (p > t)
         {
             *p = 0; p = max(t, p - DIG);
@@ -74,14 +72,12 @@ struct bigint
             if (v[i])
                 sign = (v[i] > 0) ? 1 : -1;
         }
-
         for (int i = n - 1; i > 0; i--)
             if (v[i] * sign < 0)
             {
                 v[i] += sign * BASE;
-                v[i+1] -= sign;
+                v[i + 1] -= sign;
             }
-
         while (n && !v[n])
             n--;
         return *this;
@@ -95,9 +91,18 @@ struct bigint
                 return t;
     }
 
-    bool operator <(const bigint& x) const { return cmp(x) < 0; }
-    bool operator ==(const bigint& x) const { return cmp(x) == 0; }
-    bool operator !=(const bigint& x) const { return cmp(x) != 0; }
+    bool operator <(const bigint& x) const
+    {
+        return cmp(x) < 0;
+    }
+    bool operator ==(const bigint& x) const
+    {
+        return cmp(x) == 0;
+    }
+    bool operator !=(const bigint& x) const
+    {
+        return cmp(x) != 0;
+    }
 
     operator string() const
     {
@@ -133,15 +138,23 @@ struct bigint
         return fix(x.n);
     }
 
-    bigint operator -(const bigint& x) { return bigint(*this) -= x; }
-    bigint operator -() { bigint r = 0; return r -= *this; }
+    bigint operator -(const bigint& x)
+    {
+        return bigint(*this) -= x;
+    }
+    bigint operator -()
+    {
+        bigint r = 0;
+        return r -= *this;
+    }
     void ams(const bigint& x, int m, int b)
-    { // *this += (x * m) << b;
+    {
+        // *this += (x * m) << b;
         for (int i = 1, e = 0; (i <= x.n || e) && (n = i + b); i++)
         {
-            v[i+b] += x.v[i] * m + e;
-            e = v[i+b] / BASE;
-            v[i+b] %= BASE;
+            v[i + b] += x.v[i] * m + e;
+            e = v[i + b] / BASE;
+            v[i + b] %= BASE;
         }
     }
 
@@ -149,40 +162,55 @@ struct bigint
     {
         bigint r;
         for (int i = 1; i <= n; i++)
-            r.ams(x, v[i], i-1);
+            r.ams(x, v[i], i - 1);
         return r;
     }
 
-    bigint& operator *=(const bigint& x) { return *this = *this * x; }
+    bigint& operator *=(const bigint& x)
+    {
+        return *this = *this * x;
+    }
     // cmp(x / y) == cmp(x) * cmp(y); cmp(x % y) == cmp(x);
     bigint div(const bigint& x)
     {
         if (x == 0) return 0;
         bigint q; q.n = max(n - x.n + 1, 0);
-        int d = x.v[x.n] * BASE + x.v[x.n-1];
-        for (int i = q.n; i > 0; i--) {
+        int d = x.v[x.n] * BASE + x.v[x.n - 1];
+        for (int i = q.n; i > 0; i--)
+        {
             int j = x.n + i - 1;
-            q.v[i] = int((v[j] * double(BASE) + v[j-1]) / d);
-            ams(x, -q.v[i], i-1);
+            q.v[i] = int((v[j] * double(BASE) + v[j - 1]) / d);
+            ams(x, -q.v[i], i - 1);
             if (i == 1 || j == 1) break;
-            v[j-1] += BASE * v[j]; v[j] = 0;
+            v[j - 1] += BASE * v[j]; v[j] = 0;
         }
         fix(x.n); return q.fix();
     }
 
-    bigint& operator /=(const bigint& x) { return *this = div(x); }
-    bigint& operator %=(const bigint& x) { div(x); return *this; }
-    bigint operator /(const bigint& x) { return bigint(*this).div(x); }
-    bigint operator %(const bigint& x) { return bigint(*this) %= x; }
+    bigint& operator /=(const bigint& x)
+    {
+        return *this = div(x);
+    }
+    bigint& operator %=(const bigint& x)
+    {
+        div(x);
+        return *this;
+    }
+    bigint operator /(const bigint& x)
+    {
+        return bigint(*this).div(x);
+    }
+    bigint operator %(const bigint& x)
+    {
+        return bigint(*this) %= x;
+    }
     bigint pow(int x)
     {
         if (x < 0)
             return (*this == 1 || *this == -1) ? pow(-x) : 0;
-
         bigint r = 1;
         for (int i = 0; i < x; i++)
             r *= *this;
-
         return r;
     }
 
@@ -194,7 +222,6 @@ struct bigint
             return *this;
         if (cmp() < 0)
             return -(-*this).root(x);
-
         bigint a = 1, d = *this;
         while (d != 1)
         {
@@ -214,13 +241,11 @@ int main()
     bigint n1, n2;
     string op;
     char str1[2048], str2[2048];
-
     while (cin >> str1 >> op >> str2)
     {
         n1 = str1;
         n2 = str2;
         cout << n1 << op << n2 << " = ";
-
         if (op == "-")
             cout << n1 - n2;
         else if (op == "+")
@@ -228,8 +253,7 @@ int main()
         else if (op == "/")
             cout << n1 / n2;
         else if (op == "*")
-            cout << n1 * n2;
-
+            cout << n1* n2;
         cout << endl;
     }
     return 0;

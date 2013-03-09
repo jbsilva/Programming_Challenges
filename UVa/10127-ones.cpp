@@ -1,7 +1,7 @@
 // ============================================================================
-// 
+//
 //       Filename:  10127-ones.cpp
-// 
+//
 //    Description:  UVA 10127
 //                  De início o problema parece complicado, mas após uma
 //                  análise do funcionamento da divisão ele se torna bem
@@ -27,13 +27,13 @@
 //                  11111 |_3_
 //                  11  03
 //                   2
-// 
+//
 //                  -> "Abaixamos" o próximo 1 e dividimos por 3. Da 7 resto 0
 //                  11111 |_3_
 //                  11  037
 //                   21
 //                    0
-//                  
+//
 //                  -> O resto deu 0, então 111 é o primeiro múltiplo de 3 na
 //                      forma 11...1
 //                      Não abaixamos os próximos 1s, pois só queremos o menor
@@ -44,30 +44,26 @@
 //       Revision:  10/06/2012 18:45:00 PM
 //                      Reformatei a explicação e troquei iostream por cstdio
 //       Compiler:  g++
-// 
+//
 //         Author:  Julio Batista Silva (351202), juliob91(at)gmail.com
 //        Company:  UFSCar
-// 
+//
 // ============================================================================
 #include <cstdio>
 
 int main()
 {
     int n, i, count;
-
     while (scanf("%d", &n) != EOF)
     {
         i = count = 0;
-
         do
         {
-            i = (i*10 + 1)% n;
+            i = (i * 10 + 1) % n;
             count++;
         }
         while (i);
-
         printf("%d\n", count);
     }
-
     return 0;
 }

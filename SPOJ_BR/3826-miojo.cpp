@@ -1,17 +1,17 @@
 // ============================================================================
-// 
+//
 //       Filename:  3826-miojo.cpp
-// 
+//
 //    Description:  br.spoj.pl/problems/MIOJO
-// 
+//
 //        Version:  1.0
 //        Created:  08/27/2012 12:10:49 AM
 //       Revision:  none
 //       Compiler:  g++
-// 
+//
 //         Author:  Julio B. Silva (351202), julio(at)juliobs.com
 //        Company:  UFSCar
-// 
+//
 // ============================================================================
 #include <iostream>
 using namespace std;
@@ -38,9 +38,7 @@ int main()
                 b = amp_b;
             }
         }
-
-        cout << total+preparo << endl;
+        cout << total + preparo << endl;
     }
-
     return 0;
 }

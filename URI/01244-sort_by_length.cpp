@@ -1,17 +1,17 @@
 // ============================================================================
-// 
+//
 //       Filename:  1244-sort_by_length.cpp
-// 
+//
 //    Description:  URI 1244 - Sort by Length
-// 
+//
 //        Version:  1.0
 //        Created:  13/Oct/2012 00:51:19
 //       Revision:  none
 //       Compiler:  g++
-// 
+//
 //         Author:  Julio B. Silva (351202), julio(at)juliobs.com
 //        Company:  UFSCar
-// 
+//
 // ============================================================================
 #include <cstdio>
 #include <vector>
@@ -32,10 +32,8 @@ int main()
     char word[51], c;
     vector<string> palavras;
     vector<string>::iterator it;
-
     scanf("%d", &n);
     getchar(); //'\n'
-
     while (n--)
     {
         c = 0;
@@ -44,17 +42,13 @@ int main()
             palavras.push_back(string(word));
             c = getchar();
         }
-
         stable_sort(palavras.begin(), palavras.end(), comp_len);
-
         it = palavras.begin();
         cout << *it;
         for (it++; it != palavras.end(); it++)
             cout << " " << *it;
         putchar('\n');
-
         palavras.clear();
     }
-
     return 0;
 }

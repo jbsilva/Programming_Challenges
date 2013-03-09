@@ -1,8 +1,8 @@
 // ============================================================================
-// 
+//
 //       Filename:  10815-andys_first_dictionary.cpp (UVa)
 //                  01215-andys_first_dictionary.cpp (URI)
-// 
+//
 //    Description:  UVa 10815 - Andy's first Dictionary
 //                  URI 1215 - Andy's first Dictionary
 //
@@ -14,10 +14,10 @@
 //        Created:  28/Feb/2013 21:01:17
 //       Revision:  none
 //       Compiler:  g++
-// 
+//
 //         Author:  Julio Batista Silva (351202), julio(at)juliobs.com
 //        Company:  UFSCar
-// 
+//
 // ============================================================================
 #include <cstdio>
 #include <cstring>
@@ -48,7 +48,7 @@ int main()
                     qtd++;
                     i = 0;
                 }
-                palavra[i++] = (*ptr < 'a') ? *ptr+32 : *ptr;
+                palavra[i++] = (*ptr < 'a') ? *ptr + 32 : *ptr;
             }
             else
             {
@@ -59,7 +59,6 @@ int main()
                     palavras.insert(string(palavra));
                 }
             }
-
             ptr++;
         }
         // Para quando a linha terminar numa letra
@@ -69,10 +68,8 @@ int main()
             palavras.insert(string(palavra));
         }
     }
-
     for (it = palavras.begin(); it != palavras.end(); ++it)
         puts(it->c_str());
-
     return 0;
 }
 

@@ -1,19 +1,19 @@
 // ============================================================================
-// 
+//
 //       Filename:  00750-8_queens_chess_problem.cpp
-// 
+//
 //    Description:  UVa 750 - 8 Queens Chess Problem
 //                  Solução baseada no Competitive Programming 2ed
 //                  Ainda da para otimizar mais
-// 
+//
 //        Version:  1.0
 //        Created:  09/24/2012 09:27:33 PM
 //       Revision:  none
 //       Compiler:  g++
-// 
+//
 //         Author:  Julio B. Silva (351202), julio(at)juliobs.com
 //        Company:  UFSCar
-// 
+//
 // ============================================================================
 #include <iostream>
 #include <iomanip>
@@ -23,7 +23,7 @@ using namespace std;
 
 int linha[9]; // guarda a resposta (linha[x] é a linha da coluna x com rainha)
 int l, c; // posicao da rainha do enunciado
-int count; 
+int count;
 
 // Verifica se é seguro posicionar uma raina na linha e coluna indicada
 bool seguro(int col, int lin)
@@ -49,7 +49,7 @@ void backtrack(int col)
                 cout << endl;
             }
             else
-                backtrack(col+1);
+                backtrack(col + 1);
         }
     }
 }
@@ -58,21 +58,16 @@ int main()
 {
     int datasets;
     cin >> datasets;
-
     while (datasets--)
     {
         memset(linha, 0, sizeof linha);
         count = 0;
-
         cin >> l >> c;
         linha[c] = l;
-
         cout << "SOLN       COLUMN\n"
              << " #      1 2 3 4 5 6 7 8\n\n";
-
         backtrack(1); // começa backtrack a partir da 1a coluna
         if (datasets) cout << "\n"; // último caso não tem \n
     }
-
     return 0;
 }

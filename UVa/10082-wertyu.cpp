@@ -1,19 +1,19 @@
 // ============================================================================
-// 
+//
 //       Filename:  10082-wertyu.cpp (UVa)
 //                  01196-wertyu.cpp (URI)
-// 
+//
 //    Description:  UVa 10082 - WERTYU
 //                  URI 1196 - WERTYU
-// 
+//
 //        Version:  1.0
 //        Created:  02/Nov/2012 20:52:57
 //       Revision:  none
 //       Compiler:  g++
-// 
+//
 //         Author:  Julio B. Silva (351202), julio(at)juliobs.com
 //        Company:  UFSCar
-// 
+//
 // ============================================================================
 #include <cstdio>
 
@@ -41,7 +41,7 @@ int main()
                'R', 'Y', 'C', 'Q', 'Z', 'T', ' ', 'P', ']', '['};
 
     char c;
-    while ((c=getchar()) != EOF)
+    while ((c = getchar()) != EOF)
         putchar(t[(int)c]);
 
     return 0;

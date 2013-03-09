@@ -1,13 +1,13 @@
 // ============================================================================
-// 
+//
 //       Filename:  10157-expressions.cpp
-// 
+//
 //    Description:  UVA 10157
 //
 //                  Uma expressão corretamente construida é da forma
 //                      B = (X)Y
 //                  com comprimento n e profundidade d.
-//                  
+//
 //                  Chamamos k o comprimento da parte (X). Então:
 //                      Comprimento de X: (k-2)
 //                      Comprimento de Y: (n-k)
@@ -35,7 +35,7 @@
 //                          /__
 //                          k=2
 //                        k é par
-// 
+//
 //                  A função f(n,d) resulta em um número de combinações de profundidade 0...d
 //                  Para achar o número de combinações de profundidade d:
 //                      f(n,d) - f(n,d-1)
@@ -53,10 +53,10 @@
 //        Created:  04/18/2011 11:30:34 PM
 //       Revision:  none
 //       Compiler:  g++
-// 
+//
 //         Author:  Julio Batista Silva (351202), juliob91(at)gmail.com
 //        Company:  UFSCar
-// 
+//
 // ============================================================================
 
 #include <iostream>
@@ -71,32 +71,23 @@ const USI MAX_DEPTH = 151;
 
 int main()
 {
-    BigNum **maneiras;
-    
+    BigNum** maneiras;
     USI n, d, k;
-
     // Aloca memória na heap
     maneiras = new BigNum*[MAX_LENGTH];
-
-    for (int i=0; i<MAX_LENGTH; i++)
+    for (int i = 0; i < MAX_LENGTH; i++)
         maneiras[i] = new BigNum[MAX_DEPTH];
-
     // Gera todos os números e armazena em um vetor de BigNum
-
     // Caso base
-    for (d=0; d<MAX_DEPTH; d++)
+    for (d = 0; d < MAX_DEPTH; d++)
         maneiras[0][d] = (LLI)1;
-
     // Para n par. (não precisa para n ímpar, pois o BigNum já os inicia em 0)
-    for(n=2; n<MAX_LENGTH; n+=2)
-        for (d=1; d<MAX_DEPTH; d++)
-            for(k=2; k<=n; k+=2)
-                maneiras[n][d] += maneiras[k-2][d-1] * maneiras[n-k][d];
-    
-    while( cin >> n >> d)
-        cout << maneiras[n][d] - maneiras[n][d-1] << endl;
-
+    for (n = 2; n < MAX_LENGTH; n += 2)
+        for (d = 1; d < MAX_DEPTH; d++)
+            for (k = 2; k <= n; k += 2)
+                maneiras[n][d] += maneiras[k - 2][d - 1] * maneiras[n - k][d];
+    while (cin >> n >> d)
+        cout << maneiras[n][d] - maneiras[n][d - 1] << endl;
     delete[] maneiras;
-    
     return 0;
 }

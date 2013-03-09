@@ -1,18 +1,18 @@
 // ============================================================================
-// 
+//
 //       Filename:  01077-infixa_para_posfixa.cpp
-// 
+//
 //    Description:  URI 1077 - Infixa para Posfixa
 //                  Minha implementação do Shunting-yard algorithm
-// 
+//
 //        Version:  1.0
 //        Created:  10/05/2012 07:00:59 PM
 //       Revision:  none
 //       Compiler:  g++
-// 
+//
 //         Author:  Julio B. Silva (351202), julio(at)juliobs.com
 //        Company:  UFSCar
-// 
+//
 // ============================================================================
 #include <cstdio>
 #include <cctype>
@@ -23,7 +23,7 @@ using namespace std;
 
 inline int preced(const char c)
 {
-    switch(c)
+    switch (c)
     {
         case '^': return 3;
         case '*':  case '/': return 2;
@@ -31,11 +31,11 @@ inline int preced(const char c)
     }
     return 0;
 }
- 
+
 
 inline bool is_left(const char c)
 {
-    switch(c)
+    switch (c)
     {
         case '*': case '/': case '+': case '-': return true;
         case '^': return false;
@@ -49,7 +49,6 @@ int main()
     stack<char> pilha;
     char c;
     int cases;
-    
     scanf("%d ", &cases);
     while (cases--)
     {
@@ -60,8 +59,8 @@ int main()
             else if (is_op(c))
             {
                 while (!pilha.empty() && is_op(pilha.top()) &&
-                        ( (is_left(c) && preced(c) <= preced(pilha.top())) ||
-                          (preced(c) < preced(pilha.top())) ))
+                        ((is_left(c) && preced(c) <= preced(pilha.top())) ||
+                         (preced(c) < preced(pilha.top()))))
                 {
                     putchar(pilha.top());
                     pilha.pop();
@@ -80,7 +79,6 @@ int main()
                 pilha.pop(); // remove '(' da pilha
             }
         }
-
         while (!pilha.empty())
         {
             putchar(pilha.top());
@@ -88,6 +86,5 @@ int main()
         }
         putchar('\n');
     }
-
     return 0;
 }

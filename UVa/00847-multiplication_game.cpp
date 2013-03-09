@@ -1,7 +1,7 @@
 // ============================================================================
-// 
+//
 //       Filename:  847-multiplication_game.cpp
-// 
+//
 //    Description:  UVA 847
 //                  As melhores jogadas são:
 //                      O 1o jogador sempre multiplica por 2 e o 2o sempre multiplica por 9
@@ -29,10 +29,10 @@
 //        Created:  04/11/2011 02:15:47 PM
 //       Revision:  none
 //       Compiler:  g++
-// 
+//
 //         Author:  Julio Batista Silva (351202), juliob91(at)gmail.com
 //        Company:  UFSCar
-// 
+//
 // ============================================================================
 #include <iostream>
 using namespace std;
@@ -42,14 +42,11 @@ typedef unsigned long int ULI;
 int main()
 {
     ULI n;
-
-    while(cin >> n)
+    while (cin >> n)
     {
-        while(n>18)
-            n = (n+17)/18;
-
-        cout << (n<=9 ? "Stan wins." : "Ollie wins.") << endl;
+        while (n > 18)
+            n = (n + 17) / 18;
+        cout << (n <= 9 ? "Stan wins." : "Ollie wins.") << endl;
     }
-
     return 0;
 }

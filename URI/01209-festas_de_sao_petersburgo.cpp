@@ -1,17 +1,17 @@
 // ============================================================================
-// 
+//
 //       Filename:  01209-festas_de_sao_petersburgo.cpp
-// 
+//
 //    Description:  URI 1209 - Festas de São Petersburgo
-// 
+//
 //        Version:  2.1
 //        Created:  14/Feb/2013 19:26:40
 //       Revision:  none
 //       Compiler:  g++
-// 
+//
 //         Author:  Julio Batista Silva (351202), julio(at)juliobs.com
 //        Company:  UFSCar
-// 
+//
 // ============================================================================
 #include <cstdio>
 #include <cstring>
@@ -23,13 +23,11 @@ int amigos[1001];
 inline void remover(int i)
 {
     amigos[i] = 0;
-
     for (int j = 1; j <= pessoas; j++)
         if (g[i][j])
         {
             g[i][j] = g[j][i] = 0;
             amigos[j]--;
-
             if (amigos[j] > 0 && amigos[j] < min_amigos)
                 remover(j);
         }
@@ -43,7 +41,6 @@ int main()
         {
             for (int i = 0; i < relacoes; i++)
                 scanf("%d %d", &p1, &p2);
-
             putchar('1');
             for (int i = 2; i <= pessoas; i++)
                 printf(" %d", i);
@@ -53,7 +50,6 @@ int main()
         {
             memset(g, 0, sizeof(g));
             memset(amigos, 0, sizeof(amigos));
-
             for (int i = 0; i < relacoes; i++)
             {
                 scanf("%d %d", &p1, &p2);
@@ -61,11 +57,9 @@ int main()
                 amigos[p1]++;
                 amigos[p2]++;
             }
-
             for (int i = 1; i <= pessoas; i++)
                 if (amigos[i] > 0 && amigos[i] < min_amigos)
                     remover(i);
-
             // Imprime todos os que sobraram
             bool imprimiu = false;
             for (int i = 1; i <= pessoas; i++)
@@ -79,14 +73,12 @@ int main()
                     else
                         printf(" %d", i);
                 }
-
             if (imprimiu)
                 putchar('\n');
             else
                 puts("0");
         }
     }
-
     return 0;
 }
 
