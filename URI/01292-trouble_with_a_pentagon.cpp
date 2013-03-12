@@ -1,0 +1,1 @@
+../UVa/10286-trouble_with_a_pentagon.cpp
