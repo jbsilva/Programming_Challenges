@@ -17,6 +17,7 @@
 #include <cmath>
 using namespace std;
 
+// MDC
 int gcd(int a, int b)
 {
     while (b > 0)
