@@ -10,7 +10,7 @@
  *                  timespec t1, t2;
  *                  clock_gettime(CLOCK_REALTIME, &t1);
  *                  clock_gettime(CLOCK_REALTIME, &t2);
- *                  printf("%ld:%ld\n", diff(t1,t2).tv_sec, diff(t1,t2).tv_nsec);
+ *                  printf("%ld:%09ld\n", diff(t1,t2).tv_sec, diff(t1,t2).tv_nsec);
  *
  *        Version:  1.0
  *        Created:  18/Oct/2012 20:01:23
