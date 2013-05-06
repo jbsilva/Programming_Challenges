@@ -1,8 +1,12 @@
 // ============================================================================
 //
-//       Filename:  1894-jogo_de_varetas.cpp
+//       Filename:  1894-jogo_de_varetas.cpp (SPOJ BR)
+//                  01366-jogo_de_varetas.cpp (URI)
 //
-//    Description:  br.spoj.pl/problems/VARETAS/
+//    Description:  SPOJ BR 1894 - Jogo de Varetas
+//                  URI 1366 - Jogo de Varetas
+//
+//                  br.spoj.pl/problems/VARETAS/
 //                  Primeira fase da Maratona de Programação - 2007
 //
 //        Version:  1.0
@@ -14,22 +18,23 @@
 //        Company:  UFSCar
 //
 // ============================================================================
-#include <iostream>
-using namespace std;
+#include <cstdio>
+
 
 int main()
 {
     int n; // número de diferentes comprimentos
-    while (cin >> n && n)
+    while (scanf("%d", &n) && n)
     {
         int soma_pares = 0;
         for (int i = 0; i < n; i++)
         {
             int tam, qtd;
-            cin >> tam >> qtd;
+            scanf("%d %d", &tam, &qtd);
             soma_pares += qtd / 2;
         }
-        cout << soma_pares / 2 << endl;
+        printf("%d\n", soma_pares / 2);
     }
     return 0;
 }
+
