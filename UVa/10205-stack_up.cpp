@@ -2,7 +2,7 @@
 //
 //       Filename:  10205-stack_up.cpp
 //
-//    Description:  UVA 10205
+//    Description:  UVa 10205 - Stack Up
 //
 //        Version:  1.0
 //        Created:  03/24/2011 09:45:10 AM

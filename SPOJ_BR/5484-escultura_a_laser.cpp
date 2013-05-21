@@ -1,11 +1,11 @@
 // ============================================================================
 //
 //       Filename:  5484-escultura_a_laser.cpp (SPOJ BR)
-//                  11683-laser_sculpture.cpp (UVA)
+//                  11683-laser_sculpture.cpp (UVa)
 //                  01107-escultura_a_laser.cpp (URI)
 //
 //    Description:  SPOJ BR 5484 - Escultura a Laser
-//                  UVA 11683 - Laser Sculpture
+//                  UVa 11683 - Laser Sculpture
 //                  URI 1107 - Escultura a Laser
 //
 //                  br.spoj.pl/problems/LASERR/

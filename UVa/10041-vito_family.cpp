@@ -2,7 +2,7 @@
 //
 //       Filename:  10041-vito_family.cpp
 //
-//    Description:  UVA 10041
+//    Description:  UVa 10041 - Vito Family
 //
 //        Version:  1.0
 //        Created:  04/02/2011 05:21:02 PM
@@ -13,7 +13,6 @@
 //        Company:  UFSCar
 //
 // ============================================================================
-
 #include <iostream>
 #include <vector>
 #include <algorithm>
@@ -46,11 +45,13 @@ USI Mediana(vector<USI>& casas)
 }
 #endif
 
+
 USI Mediana(vector<USI>& vetor)
 {
     sort(vetor.begin(), vetor.end());
     return vetor.at(vetor.size() / 2);
 }
+
 
 USI distancia(USI s1, USI s2)
 {
@@ -59,6 +60,7 @@ USI distancia(USI s1, USI s2)
     else
         return (s2 - s1);
 }
+
 
 int main()
 {
@@ -85,3 +87,4 @@ int main()
     }
     return 0;
 }
+

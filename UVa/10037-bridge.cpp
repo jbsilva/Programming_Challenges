@@ -2,9 +2,11 @@
 //
 //       Filename:  10037-bridge.cpp
 //
-//    Description:  UVA 10037
-//                  Pensei em utilizar um set, pois ele ordena sozinho. Mas poder acessar
-//                  as posições direto, sem iterators é mais simples.
+//    Description:  UVa 10037 - Bridge
+//
+//                  Pensei em utilizar um set, pois ele ordena sozinho. Mas
+//                  poder acessar as posições direto, sem iterators é mais
+//                  simples.
 //
 //        Version:  1.0
 //        Created:  04/02/2011 08:36:58 PM
@@ -15,7 +17,6 @@
 //        Company:  UFSCar
 //
 // ===================================================================
-
 #include <iostream>
 #include <vector>
 #include <algorithm>

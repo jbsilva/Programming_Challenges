@@ -2,10 +2,10 @@
 //
 //       Filename:  10132-file_fragmentation.cpp
 //
-//    Description:  UVA 10132
+//    Description:  UVa 10132 - File Fragmentation
 //
-//           TODO:  Verificar casos sem resposta, embora pelo enunciado podemos assumir
-//                  que sempre tem.
+//           TODO:  Verificar casos sem resposta, embora pelo enunciado podemos
+//                  assumir que sempre tem.
 //
 //        Version:  1.0
 //        Created:  04/01/2011 08:08:39 AM

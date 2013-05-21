@@ -2,19 +2,22 @@
 //
 //       Filename:  00861-little_bishops.cpp
 //
-//    Description:  UVA 861
-//                  Esse problema poderia ser resolvido por backtracking, mas essa não é
-//                  a forma mais eficiente.
+//    Description:  UVa 861 - Little Bishops
 //
-//                  Se um bispo iniciou o jogo em uma casa de determinada cor, ele apenas
-//                  poderá atacar peças em casas dessa mesma cor, então podemos dividir
-//                  o tabuleiro em casas brancas e pretas.
+//                  Esse problema poderia ser resolvido por backtracking, mas
+//                  essa não é a forma mais eficiente.
 //
-//                  Depois giramos 45 graus cada um desses tabureiros, de forma que os
-//                  bispos agora se movimentem como torres (na vertical e horizontal).
+//                  Se um bispo iniciou o jogo em uma casa de determinada cor,
+//                  ele apenas poderá atacar peças em casas dessa mesma cor,
+//                  então podemos dividir o tabuleiro em casas brancas e
+//                  pretas.
 //
-//                  O vetor "linB" indica o número de casas em cada linha do novo
-//                  tabuleiro girado, formado apenas por casas brancas.
+//                  Depois giramos 45 graus cada um desses tabureiros, de forma
+//                  que os bispos agora se movimentem como torres (na vertical
+//                  e horizontal).
+//
+//                  O vetor "linB" indica o número de casas em cada linha do
+//                  novo tabuleiro girado, formado apenas por casas brancas.
 //                      Exemplo, para um tabuleiro 6x6:
 //                             *                  *         1
 //                            ***                 *         1
@@ -23,11 +26,11 @@
 //                            ***               *****       5
 //                             *                *****       5
 //
-//                      Perceba que ambas as formas são equivalentes, já que a altura e a
-//                      largura são iguais.
+//                      Perceba que ambas as formas são equivalentes, já que a
+//                      altura e a largura são iguais.
 //
-//                  O vetor "linP" incica o número de casas em cada linha do segundo
-//                  tabuleiro girado, formado apenas por casas pretas.
+//                  O vetor "linP" incica o número de casas em cada linha do
+//                  segundo tabuleiro girado, formado apenas por casas pretas.
 //                      Exemplo, para um tabuleiro 6x6:
 //                            **                 **          2
 //                           ****                **          2
@@ -52,7 +55,6 @@
 //        Company:  UFSCar
 //
 // ============================================================================
-
 #include <iostream>
 using namespace std;
 
@@ -103,6 +105,7 @@ LLI comb(int n, int k)
     return arr;
 }
 
+
 int main()
 {
     int n, k;
@@ -110,3 +113,4 @@ int main()
         cout << comb(n, k) << endl;
     return 0;
 }
+

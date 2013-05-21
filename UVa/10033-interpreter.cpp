@@ -2,7 +2,7 @@
 //
 //       Filename:  10033-interpreter.cpp
 //
-//    Description:  UVA 10033
+//    Description:  UVa 10033
 //
 //        Version:  1.0
 //        Created:  04/14/2011 09:31:51 PM

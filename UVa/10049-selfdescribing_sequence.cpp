@@ -2,14 +2,14 @@
 //
 //       Filename:  10049-selfdescribing_sequence.cpp
 //
-//    Description:  UVA 10049
+//    Description:  UVa 10049 - Selfdescribing Sequence
 //
-//                  Criei um vetor que armazena as faixas em que f(n) se mantém, assim
-//                  faixa[] = 1, 2, 4, 6, 9, 12, 16, 20...
+//                  Criei um vetor que armazena as faixas em que f(n) se mantém,
+//                  assim faixa[] = 1, 2, 4, 6, 9, 12, 16, 20...
 //
-//                  Então se quisermos f(10) teremos que encontrar, no vetor, o maior número
-//                  menor ou igual a 10. Neste caso é 9, então retornamos a posição desse
-//                  número + 1.
+//                  Então se quisermos f(10) teremos que encontrar, no vetor, o
+//                  maior número menor ou igual a 10. Neste caso é 9, então
+//                  retornamos a posição desse número + 1.
 //                  9 está em faixa[4], então f(10) = 5;
 //
 //                  Para criar esse vetor, observamos que:
@@ -29,7 +29,6 @@
 //        Company:  UFSCar
 //
 // ============================================================================
-
 #include <iostream>
 using namespace std;
 

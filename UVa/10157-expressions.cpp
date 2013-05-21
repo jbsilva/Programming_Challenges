@@ -2,7 +2,7 @@
 //
 //       Filename:  10157-expressions.cpp
 //
-//    Description:  UVA 10157
+//    Description:  UVa 10157 - Expressions
 //
 //                  Uma expressão corretamente construida é da forma
 //                      B = (X)Y

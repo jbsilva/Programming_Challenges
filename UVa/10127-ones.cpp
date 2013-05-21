@@ -1,8 +1,11 @@
 // ============================================================================
 //
-//       Filename:  10127-ones.cpp
+//       Filename:  10127-ones.cpp (UVa)
+//                  01213-ones.cpp (URI)
 //
-//    Description:  UVA 10127
+//    Description:  UVa 10127 - Ones
+//                  URI 1213 - Ones
+//
 //                  De início o problema parece complicado, mas após uma
 //                  análise do funcionamento da divisão ele se torna bem
 //                  simples.
@@ -51,6 +54,7 @@
 // ============================================================================
 #include <cstdio>
 
+
 int main()
 {
     int n, i, count;
@@ -67,3 +71,4 @@ int main()
     }
     return 0;
 }
+

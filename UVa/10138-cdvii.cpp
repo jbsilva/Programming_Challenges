@@ -2,7 +2,7 @@
 //
 //       Filename:  10138-cdvii.cpp
 //
-//    Description:  UVA 10138
+//    Description:  UVa 10138 - CDVII
 //
 //        Version:  1.0
 //        Created:  04/04/2011 12:41:36 AM

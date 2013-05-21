@@ -2,7 +2,7 @@
 //
 //       Filename:  10254-priest_matematician.cpp
 //
-//    Description:  UVA 10254
+//    Description:  UVa 10254 - Priest Matematician
 //
 //                  A fórmula de recorrência para esse problema é
 //                      f(n) = 2 * f(n-k) + 2^k - 1
@@ -19,7 +19,6 @@
 //        Company:  UFSCar
 //
 // ============================================================================
-
 #include <iostream>
 #include <new>
 #include <cstdlib>

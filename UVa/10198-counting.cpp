@@ -2,7 +2,7 @@
 //
 //       Filename:  10198-counting.cpp
 //
-//    Description:  UVA 10198
+//    Description:  UVa 10198 - Counting
 //
 //                  Seja f(n) o número de combinações cuja soma é n.
 //                  f(n) = f(n-1) + f(n-2) + f(n-3) + f(n-1)

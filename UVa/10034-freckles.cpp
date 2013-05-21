@@ -2,7 +2,8 @@
 //
 //       Filename:  10034-freckles.cpp
 //
-//    Description:  UVA 10034
+//    Description:  UVa 10034 - Freckles
+//
 //                  Devemos achar o peso da menor spanning tree.  Aqui usarei
 //                  uma variação do algoritmo de prim  por ser bem simples
 //                  Existem soluções mais eficientes.

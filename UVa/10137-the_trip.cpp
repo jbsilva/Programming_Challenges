@@ -3,7 +3,7 @@
 //       Filename:  10137-the_trip.cpp (UVa)
 //                  01220-the_trip.cpp (URI)
 //
-//    Description:  UVA 10137 - The Trip
+//    Description:  UVa 10137 - The Trip
 //                  URI 1220 - The Trip
 //
 //                  A dificuldade deste problema está em lembrar que não se

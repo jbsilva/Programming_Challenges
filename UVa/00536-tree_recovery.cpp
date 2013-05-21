@@ -1,9 +1,9 @@
 // ============================================================================
 //
-//       Filename:  00536-tree_recovery.cpp (UVA)
+//       Filename:  00536-tree_recovery.cpp (UVa)
 //                  01191-recuperacao_da_arvore (URI)
 //
-//    Description:  UVA 536 - Tree Recovery
+//    Description:  UVa 536 - Tree Recovery
 //                  URI 1191 - Recuperação da Árvore
 //
 //                  Construir o percurso posfixo de uma árvore binária a partir

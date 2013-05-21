@@ -2,7 +2,7 @@
 //
 //       Filename:  10010-where_waldorf.cpp
 //
-//    Description:  UVA 10010 - Where's Waldorf
+//    Description:  UVa 10010 - Where's Waldorf
 //                  GOTO S2 S2 =P
 //
 //                  A troca do iostream pelo cstdio não reduziu o tempo

@@ -2,7 +2,7 @@
 //
 //       Filename:  10018-reverse_add.cpp
 //
-//    Description:  UVA 10018
+//    Description:  UVa 10018 - Reverse Add
 //                  Se n já for palíndromo a saída será: "0 n"
 //
 //        Version:  1.0
@@ -14,7 +14,6 @@
 //        Company:  UFSCar
 //
 // ============================================================================
-
 #include <iostream>
 using namespace std;
 
@@ -41,6 +40,7 @@ bool palindromo(UI num, USI base = 10)
 {
     return (num == reverte(num, base) ? 1 : 0);
 }
+
 
 int main()
 {

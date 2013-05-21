@@ -2,7 +2,7 @@
 //
 //       Filename:  10026-shoemaker.cpp
 //
-//    Description:  UVA 10026
+//    Description:  UVa 10026 - Shoemaker
 //
 //        Version:  1.0
 //        Created:  04/03/2011 07:23:08 PM
@@ -13,7 +13,6 @@
 //        Company:  UFSCar
 //
 // ============================================================================
-
 #include <iostream>
 #include <vector>
 #include <algorithm>
@@ -82,3 +81,4 @@ int main()
     }
     return 0;
 }
+

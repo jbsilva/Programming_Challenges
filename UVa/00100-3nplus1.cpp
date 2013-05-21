@@ -2,7 +2,7 @@
 //
 //       Filename:  00100-3nplus1.cpp
 //
-//    Description:  UVA 100
+//    Description:  UVa 100 - 3n Plus 1
 //
 //                  Versão 1.1:
 //                              Apaguei comentários desnecessários

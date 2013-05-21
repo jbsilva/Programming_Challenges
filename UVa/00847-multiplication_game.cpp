@@ -2,18 +2,18 @@
 //
 //       Filename:  847-multiplication_game.cpp
 //
-//    Description:  UVA 847
+//    Description:  UVa 847 - Multiplication Game
 //                  As melhores jogadas são:
-//                      O 1o jogador sempre multiplica por 2 e o 2o sempre multiplica por 9
-//                      O 1o jogador sempre multiplica por 9 e o 2o sempre multiplica por 2
+//                      O 1o jogador sempre multiplica por 2 e o 2o sempre por 9
+//                      O 1o jogador sempre multiplica por 9 e o 2o sempre por 2
 //
-//                  |   S   |   O   |   S   |   O   |   S   |   O   |   S   |   O   |   S   |
-//                      2      18      36      324     648     5832   11664  104976  209952
+//                  |  S  |  O  |  S  |  O  |  S  |  O  |  S  |  O  |  S  |
+//                     2     18    36    324  648   5832 11664 104976 209952
 //
 //                                                      ou
 //
-//                  |   S   |   O   |   S   |   O   |   S   |   O   |   S   |   O   |   S   |
-//                      9      18      162     324    2916     5832   52488  104976  944784
+//                  |  S  |  O  |  S  |  O  |  S  |  O  |  S  |   O   |   S   |
+//                     9    18    162   324   2916  5832  52488 104976  944784
 //
 //                  Da para perceber o padrão,
 //                      S ganha: 000001-000009
@@ -37,7 +37,9 @@
 #include <iostream>
 using namespace std;
 
+
 typedef unsigned long int ULI;
+
 
 int main()
 {

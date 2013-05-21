@@ -2,7 +2,7 @@
 //
 //       Filename:  10006-Carmichael_Numbers_v1.cpp
 //
-//    Description:  UVA 10006
+//    Description:  UVa 10006 - Carmichael Numbers
 //
 //        Version:  1.0
 //        Created:  05/04/2011 11:32:15 PM
@@ -13,7 +13,6 @@
 //        Company:  UFSCar
 //
 // ============================================================================
-
 #include <iostream>
 using namespace std;
 
@@ -49,3 +48,4 @@ int main()
     }
     return 0;
 }
+
