@@ -6,7 +6,7 @@
 //    Description:  UVa 11991 - Easy Problem from Rujia Liu?
 //                  URI 1424 - Easy Problem from Rujia Liu?
 //
-//        Version:  1.0
+//        Version:  2.0 -- Melhor desempenho
 //        Created:  29/May/2013 20:03:37
 //       Revision:  none
 //       Compiler:  g++
@@ -16,6 +16,7 @@
 //
 // ============================================================================
 #include <cstdio>
+#include <cstring>
 #include <vector>
 using namespace std;
 
@@ -25,17 +26,24 @@ typedef vector<int> vi;
 
 int main()
 {
-    int n, m, k, v;
+    int n, m, k, v, qtd[1000001];
     vector<vi> ocorr;
+    ocorr.resize(1000001);
 
     while (scanf("%d %d", &n, &m) != EOF)
     {
-        ocorr.assign(1000001, vi());
+        memset(qtd, 0, sizeof(qtd));
 
         for (int i = 1; i <= n; i++)
         {
             scanf("%d", &v);
+
+            if (!qtd[v])
+                ocorr[v].clear();
+
             ocorr[v].push_back(i);
+
+            qtd[v]++;
         }
 
         while (m--)
