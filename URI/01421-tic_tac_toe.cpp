@@ -4,7 +4,7 @@
 //
 //    Description:  URI 1421 - Tic-Tac-Toe?
 //
-//        Version:  1.0 - Recebeu TLE
+//        Version:  2.0 -- Verifica só onde precisa em vez do cubo inteiro
 //        Created:  30/May/2013 13:56:13
 //       Revision:  none
 //       Compiler:  g++
@@ -18,160 +18,168 @@
 
 
 // -1: Vazio, 0: Branco, 1: Azul
-int cubo[41][41][41], n, x, y, z;
+int cubo[40][40][40], n, x, y, z;
 
 
-int verifica_ganhador()
+bool verifica_ganhador(int cor)
 {
+    int jx = x, jy = y, jz = z; // Coordenadas da jogada
     bool ganhou;
-    for (z = 1; z <= n; z++)
-    {
-        // Eixo X
-        for (y = 1; y <= n; y++)
-        {
-            ganhou = true;
-            for (x = 1; x < n; x++)
-                if (cubo[x][y][z] != cubo[x + 1][y][z])
-                {
-                    ganhou = false;
-                    break;
-                }
-            if (ganhou && cubo[x][y][z] != -1)
-                return cubo[x][y][z];
-        }
-        // Eixo Y
-        for (x = 1; x <= n; x++)
-        {
-            ganhou = true;
-            for (y = 1; y < n; y++)
-                if (cubo[x][y][z] != cubo[x][y + 1][z])
-                {
-                    ganhou = false;
-                    break;
-                }
-            if (ganhou && cubo[x][y][z] != -1)
-                return cubo[x][y][z];
-        }
-    }
-    // Eixo Z;
+    // Eixo X
     ganhou = true;
     for (x = 1; x <= n; x++)
-        for (y = 1; y <= n; y++)
+        if (cubo[x][jy][jz] != cor)
         {
-            bool ganhou = true;
-            for (z = 1; z < n; z++)
-                if (cubo[x][y][z] != cubo[x][y][z + 1])
-                {
-                    ganhou = false;
-                    break;
-                }
-            if (ganhou && cubo[x][y][z] != -1)
-                return cubo[x][y][z];
+            ganhou = false;
+            break;
         }
-    // Diagonais - Plano XY
+    if (ganhou)
+        return true;
+    // Eixo Y
+    ganhou = true;
+    for (y = 1; y <= n; y++)
+        if (cubo[jx][y][jz] != cor)
+        {
+            ganhou = false;
+            break;
+        }
+    if (ganhou)
+        return true;
+    // Eixo Z
+    ganhou = true;
     for (z = 1; z <= n; z++)
+        if (cubo[jx][jy][z] != cor)
+        {
+            ganhou = false;
+            break;
+        }
+    if (ganhou)
+        return true;
+    // Diagonais - Plano XY
+    if (jx == jy) // se está numa diagonal
     {
         ganhou = true;
-        for (x = 1, y = 1; x < n; x++, y++)
-            if (cubo[x][y][z] != cubo[x + 1][y + 1][z])
+        for (x = 1, y = 1; x <= n; x++, y++)
+            if (cubo[x][y][jz] != cor)
             {
                 ganhou = false;
                 break;
             }
-        if (ganhou && cubo[x][y][z] != -1)
-            return cubo[x][y][z];
+        if (ganhou)
+            return true;
+    }
+    if (jx + jy == n + 1) // se está numa diagonal
+    {
         ganhou = true;
-        for (x = n, y = 1; y < n; x--, y++)
-            if (cubo[x][y][z] != cubo[x - 1][y + 1][z])
+        for (x = n, y = 1; y <= n; x--, y++)
+            if (cubo[x][y][jz] != cor)
             {
                 ganhou = false;
                 break;
             }
-        if (ganhou && cubo[x][y][z] != -1)
-            return cubo[x][y][z];
+        if (ganhou)
+            return true;
     }
     // Diagonais - Plano YZ
-    for (x = 1; x <= n; x++)
+    if (jy == jz) // se está numa diagonal
     {
         ganhou = true;
-        for (z = 1, y = 1; z < n; z++, y++)
-            if (cubo[x][y][z] != cubo[x][y + 1][z + 1])
+        for (y = 1, z = 1; y <= n; y++, z++)
+            if (cubo[jx][y][z] != cor)
             {
                 ganhou = false;
                 break;
             }
-        if (ganhou && cubo[x][y][z] != -1)
-            return cubo[x][y][z];
+        if (ganhou)
+            return true;
+    }
+    if (jy + jz == n + 1) // se está numa diagonal
+    {
         ganhou = true;
-        for (z = n, y = 1; y < n; y++, z--)
-            if (cubo[x][y][z] != cubo[x][y + 1][z - 1])
+        for (y = n, z = 1; z <= n; y--, z++)
+            if (cubo[jx][y][z] != cor)
             {
                 ganhou = false;
                 break;
             }
-        if (ganhou && cubo[x][y][z] != -1)
-            return cubo[x][y][z];
+        if (ganhou)
+            return true;
     }
     // Diagonais - Plano XZ
-    for (y = 1; y <= n; y++)
+    if (jx == jz) // se está numa diagonal
     {
         ganhou = true;
-        for (x = 1, z = 1; x < n; x++, z++)
-            if (cubo[x][y][z] != cubo[x + 1][y][z + 1])
+        for (x = 1, z = 1; x <= n; x++, z++)
+            if (cubo[x][jy][z] != cor)
             {
                 ganhou = false;
                 break;
             }
-        if (ganhou && cubo[x][y][z] != -1)
-            return cubo[x][y][z];
+        if (ganhou)
+            return true;
+    }
+    if (jx + jz == n + 1) // se está numa diagonal
+    {
         ganhou = true;
-        for (z = n, x = 1; x < n; z--, x++)
-            if (cubo[x][y][z] != cubo[x + 1][y][z - 1])
+        for (x = n, z = 1; z <= n; x--, z++)
+            if (cubo[x][jy][z] != cor)
             {
                 ganhou = false;
                 break;
             }
-        if (ganhou && cubo[x][y][z] != -1)
-            return cubo[x][y][z];
+        if (ganhou)
+            return true;
     }
     // Diagonais principais
-    ganhou = true;
-    for (x = 1, y = 1, z = 1; x < n ; x++, y++, z++)
-        if (cubo[x][y][z] != cubo[x + 1][y + 1][z + 1])
-        {
-            ganhou = false;
-            break;
-        }
-    if (ganhou && cubo[x][y][z] != -1)
-        return cubo[x][y][z];
-    ganhou = true;
-    for (x = 1, y = 1, z = n; x < n ; x++, y++, z--)
-        if (cubo[x][y][z] != cubo[x + 1][y + 1][z - 1])
-        {
-            ganhou = false;
-            break;
-        }
-    if (ganhou && cubo[x][y][z] != -1)
-        return cubo[x][y][z];
-    ganhou = true;
-    for (x = 1, y = n, z = n; x < n ; x++, y--, z--)
-        if (cubo[x][y][z] != cubo[x + 1][y - 1][z - 1])
-        {
-            ganhou = false;
-            break;
-        }
-    if (ganhou && cubo[x][y][z] != -1)
-        return cubo[x][y][z];
-    ganhou = true;
-    for (x = 1, y = n, z = 1; x < n ; x++, y--, z++)
-        if (cubo[x][y][z] != cubo[x + 1][y - 1][z + 1])
-        {
-            ganhou = false;
-            break;
-        }
-    if (ganhou && cubo[x][y][z] != -1)
-        return cubo[x][y][z];
-    return -1;
+    if (jx == jy && jx == jz) // Se está na diagonal
+    {
+        ganhou = true;
+        for (x = 1, y = 1, z = 1; x <= n ; x++, y++, z++)
+            if (cubo[x][y][z] != cor)
+            {
+                ganhou = false;
+                break;
+            }
+        if (ganhou)
+            return true;
+    }
+    if (jx == jy && jx + jz == n + 1) // Se está na diagonal
+    {
+        ganhou = true;
+        for (x = 1, y = 1, z = n; x <= n ; x++, y++, z--)
+            if (cubo[x][y][z] != cor)
+            {
+                ganhou = false;
+                break;
+            }
+        if (ganhou)
+            return true;
+    }
+    if (jy == jz && jx + jy == n + 1) // Se está na diagonal
+    {
+        ganhou = true;
+        for (x = 1, y = n, z = n; x <= n ; x++, y--, z--)
+            if (cubo[x][y][z] != cor)
+            {
+                ganhou = false;
+                break;
+            }
+        if (ganhou)
+            return true;
+    }
+    if (jx == jz && jx + jy == n + 1) // Se está na diagonal
+    {
+        ganhou = true;
+        for (x = 1, y = n, z = 1; x <= n ; x++, y--, z++)
+            if (cubo[x][y][z] != cor)
+            {
+                ganhou = false;
+                break;
+            }
+        if (ganhou)
+            return true;
+    }
+    return false;
 }
 
 
@@ -192,9 +200,9 @@ int main()
                 while (cubo[x][y][z] != -1)
                     z++;
                 cubo[x][y][z] = cor;
-
                 if (jogada >= n)
-                    ganhador = verifica_ganhador();
+                    if (verifica_ganhador(cor))
+                        ganhador = cor;
                 cor = (cor + 1) % 2;
             }
         }
