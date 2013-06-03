@@ -4,7 +4,7 @@
 //
 //    Description:  URI 1082 - Componentes Conexos
 //
-//        Version:  1.0
+//        Version:  2.0 - Precisava imprimir ordenado
 //        Created:  02/Jun/2013 20:59:24
 //       Revision:  none
 //       Compiler:  g++
@@ -22,13 +22,14 @@ using namespace std;
 
 typedef vector<int> vi;
 vector<vi> AdjList;
+vector<char> componente;
 bool visitado[30];
 
 
 void dfs(int n)
 {
     visitado[n] = 1;
-    printf("%c,", (char)(n + 'a'));
+    componente.push_back((char)(n + 'a'));
     for (vi::iterator it = AdjList[n].begin(); it != AdjList[n].end(); ++it)
         if (!visitado[*it])
             dfs(*it);
@@ -53,16 +54,17 @@ int main()
             AdjList[(int)(v - 'a')].push_back((int)(u - 'a'));
         }
 
-        // O input não vem ordenado
-        for (int v = 0; v < V; v++)
-            sort(AdjList[v].begin(), AdjList[v].end());
-
         int CC = 0;
         for (int v = 0; v < V; v++)
             if (!visitado[v])
             {
                 CC++;
                 dfs(v);
+                sort(componente.begin(), componente.end());
+                for (vector<char>::iterator it = componente.begin();
+                                            it != componente.end(); ++it)
+                    printf("%c,", *it);
+                componente.clear();
                 putchar('\n');
             }
         printf("%d connected components\n\n", CC);
