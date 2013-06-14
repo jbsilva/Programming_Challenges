@@ -1,8 +1,12 @@
 // ============================================================================
 //
-//       Filename:  4888-copa_do_mundo.cpp
+//       Filename:  4888-copa_do_mundo.cpp (SPOJ BR)
+//                  01414-copa_do_mundo.cpp (URI)
 //
-//    Description:  br.spoj.pl/problems/COPA/
+//    Description:  SPOJ BR 4888 - Copa do Mundo
+//                  URI 1414 - Copa do Mundo
+//
+//                  br.spoj.pl/problems/COPA/
 //                  Primeira fase da Maratona de Programação - 2006
 //                  Problema F: Copa do Mundo
 //
@@ -37,3 +41,4 @@ int main()
     }
     return 0;
 }
+
