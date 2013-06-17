@@ -1,0 +1,1 @@
+../SPOJ_BR/3592-loteria_de_fim_de_semana.cpp
