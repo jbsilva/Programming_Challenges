@@ -9,6 +9,7 @@ seguintes sites:
 *   [UVa Online Judge](http://uva.onlinejudge.org/)
 *   [Maratona de Programação](http://maratona.ime.usp.br/)
 *   [PKU Online Judge](http://poj.org/)
+*   [ACM Timus](http://acm.timus.ru/)
 *   [Sphere Online Judge](http://spoj.pl/)
 *   [Sphere Online Judge BR](http://br.spoj.pl/)
 *   [URI Online Judge](http://urionlinejudge.com.br/)
