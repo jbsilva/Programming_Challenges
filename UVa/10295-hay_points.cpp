@@ -34,7 +34,7 @@ int main()
     }
     while (N--)
     {
-        soma = 0.0;
+        soma = 0;
         while (scanf("%s", &word) && word[0] != '.')
             soma += pvals[string(word)];
         printf("%d\n", soma);
