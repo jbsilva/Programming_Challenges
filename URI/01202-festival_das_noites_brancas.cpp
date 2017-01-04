@@ -11,7 +11,7 @@
 //       Revision:  10/05/2012 12:05:00 PM (AC)
 //       Compiler:  g++
 //
-//         Author:  Julio B. Silva (351202), julio(at)juliobs.com
+//         Author:  Julio Batista Silva (351202), julio(at)juliobs.com
 //        Company:  UFSCar
 //
 // ============================================================================

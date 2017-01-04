@@ -12,7 +12,7 @@
 //                      Otimizei para conseguir 0.000s no URI
 //       Compiler:  g++
 //
-//         Author:  Julio B. Silva (351202), julio(at)juliobs.com
+//         Author:  Julio Batista Silva (351202), julio(at)juliobs.com
 //        Company:  UFSCar
 //
 // ============================================================================

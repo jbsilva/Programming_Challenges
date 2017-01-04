@@ -13,7 +13,7 @@
 //       Revision:  14/04/2011 by Julio
 //       Compiler:  g++
 //
-//         Author:  Julio Batista Silva (351202), juliob91(at)gmail.com
+//         Author:  Julio Batista Silva (351202), julio(at)juliobs.com
 //        Company:  UFSCar
 //
 // ===================================================================
