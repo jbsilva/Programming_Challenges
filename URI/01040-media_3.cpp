@@ -4,7 +4,7 @@
 //
 //    Description:  URI 1040 - Média 3
 //
-//        Version:  1.0
+//        Version:  2.0
 //        Created:  09/27/2012 08:12:00 AM
 //       Revision:  none
 //       Compiler:  g++
@@ -36,9 +36,9 @@ int main()
             cout << "Aluno aprovado." << endl;
         else
             cout << "Aluno reprovado." << endl;
+        cout << "Media final: " << media << endl;
     }
     else
         cout << "Aluno reprovado." << endl;
-    cout << "Media final: " << media << endl;
     return 0;
 }
