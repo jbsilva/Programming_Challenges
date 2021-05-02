@@ -23,7 +23,7 @@ int main()
     {
         scanf("%d", &z);
     }
-    while (z < x);
+    while (z <= x);
     int i = x + 1, count = 1;
     while (x <= z)
     {
