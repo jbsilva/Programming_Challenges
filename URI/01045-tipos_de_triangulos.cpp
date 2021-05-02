@@ -4,7 +4,7 @@
 //
 //    Description:  URI 1040 - Tipos de Triangulos
 //
-//        Version:  1.0
+//        Version:  2.0
 //        Created:  09/27/2012 08:35:00 AM
 //       Revision:  none
 //       Compiler:  g++
@@ -28,7 +28,7 @@ int main()
     for (int i = 0; i < 3; i++)
         cin >> l[i];
     sort(l, &l[4], inverso);
-    if (l[0] > l[1] + l[2])
+    if (l[0] >= l[1] + l[2])
         cout << "NAO FORMA TRIANGULO" << endl;
     else if (l[0]*l[0] == l[1]*l[1] + l[2]*l[2])
         cout << "TRIANGULO RETANGULO" << endl;
