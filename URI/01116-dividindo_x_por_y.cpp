@@ -4,7 +4,7 @@
 //
 //    Description:  URI 1116 - Dividindo X por Y
 //
-//        Version:  1.0
+//        Version:  2.0
 //        Created:  09/30/2012 02:23:42 PM
 //       Revision:  none
 //       Compiler:  g++
@@ -26,7 +26,7 @@ int main()
         if (y == 0)
             puts("divisao impossivel");
         else
-            printf("%g\n", (double)x / y);
+            printf("%.1f\n", (double)x / y);
     }
     return 0;
 }
